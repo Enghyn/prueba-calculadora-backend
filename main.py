@@ -338,7 +338,7 @@ def calcular(datos: OperacionRequest) -> OperacionResponse:
         )
 
     
-    if resultado == 67:
+    if resultado == 67.0:
         expresion = f"{datos.a} {simbolo} {datos.b} = SIX SEVEN"
     else:
         expresion = f"{datos.a} {simbolo} {datos.b} = {resultado}"

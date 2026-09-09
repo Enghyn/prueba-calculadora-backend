@@ -337,7 +337,11 @@ def calcular(datos: OperacionRequest) -> OperacionResponse:
             ),
         )
 
-    expresion = f"{datos.a} {simbolo} {datos.b} = {resultado}"
+    
+    if resultado == 67:
+        expresion = f"{datos.a} {simbolo} {datos.b} = SIX SEVEN"
+    else:
+        expresion = f"{datos.a} {simbolo} {datos.b} = {resultado}"
 
     # El guardado va DESPUES de que la cuenta salio bien, y no puede fallar
     # hacia afuera: db.guardar() se traga cualquier error y lo manda al log.

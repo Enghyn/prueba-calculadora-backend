@@ -429,7 +429,8 @@ def historial(
     return [ItemHistorial(**fila) for fila in filas]
 
 
-@app.get("/api/salud", methods=["GET", "HEAD"],response_model=SaludResponse, tags=["infra"])
+@app.get("/api/salud", response_model=SaludResponse, tags=["infra"])
+@app.head("/api/salud", include_in_schema=False)
 def salud() -> SaludResponse:
     """Healthcheck. Sirve para saber si la API esta viva sin hacer una cuenta."""
     return SaludResponse(estado="ok", persistencia=db.hay_persistencia())
